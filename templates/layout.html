@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+    <head>
+
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+
+        <!-- http://getbootstrap.com/docs/4.1/ -->
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+        <!--<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>-->
+        <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>-->
+        <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>-->
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+        <link href="/static/styles.css" rel="stylesheet">
+        <!--Fonts taken from https://fonts.google.com/-->
+        <link href="https://fonts.googleapis.com/css?family=Proza+Libre|Questrial" rel="stylesheet">
+        <title>The Blocking Algorithm</title>
+
+    </head>
+
+    <body>
+        <div class = "image container-fluid">
+            <!-- http://getbootstrap.com/docs/4.1/components/navbar/ -->
+   		    <nav class="navbar navbar-expand-sm navbar-dark">
+                <button aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" type="button" data-target="#navbarNav" data-toggle="collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav navbar-nav">
+
+                    </ul>
+                    <ul class="nav navbar-nav abs-center">
+                        <li class="nav-item">
+                            <a class="nav-link color-me" href="/form">FORM</a>
+                        </li>
+                        <li class="nav-item"><a href = "/"><img src = "static/download.png" width = "90" height = "90" alt = ""> </a></li>
+                        <li class="nav-item">
+                            <a class="nav-link color-me" href="/results">RESULTS</a>
+                        </li>
+                    </ul>
+                    <ul class = "nav navbar-nav">
+
+                    </ul>
+                </div>
+            </nav>
+   		    <h1 class="mb-3 header" id = "title">BLOCKED</h1>
+   		    <h1 class ="mb-3 header" id = "subtitle">STRESS-FREE HOUSING SOLUTIONS: A CS50 2018 PROJECT</h1>
+   	    </div>
+
+        </div>
+
+
+        <!-- http://getbootstrap.com/docs/4.1/layout/overview/#containers -->
+        <main class="container-fluid">
+            {% block main %}{% endblock %}
+        </main>
+
+    </body>
+
+</html>

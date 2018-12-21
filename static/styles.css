@@ -1,0 +1,121 @@
+body {
+    width: 100%;
+    margin: 0%;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+
+}
+
+select {
+    font-size: 16px;
+    color: #000000;
+}
+
+input {
+    font-size: 16px;
+    color: #000000;
+}
+
+label {
+    font-weight: 700;
+}
+
+.container-fluid {
+  padding: 0 !important;
+}
+
+.abs-center {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navbar-nav li a {
+    line-height: 100px;
+    height: 100px;
+    padding-top: 0;
+}
+
+.color-me {
+    opacity: 1;
+}
+
+.halfwidth{
+    width: 50%;
+}
+
+.crim-background {
+    background-color: #A51C30;
+}
+
+.nav-item {
+    font-family: 'Proza Libre', sans-serif;
+    font-weight: 600;
+}
+
+.image {
+    height: 640px;
+    background:linear-gradient(to top, rgba(0,0,0,0) 5%, rgba(0,0,0,0.9)), url(yard_spring.jpg) !important;
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    font-family: 'Proza Libre', sans-serif;
+}
+
+.text {
+    margin-top: 45px;
+    font-family: 'Proza Libre', sans-serif;
+}
+
+.jumbotron{
+    font-size: 20px;
+    font-family: 'Proza Libre', sans-serif;
+}
+
+#form {
+    margin-top: 70px;
+}
+
+#label1 {
+    margin-top: 10px;
+}
+
+#title {
+    color: #FFFFFF;
+    font-size: 90px;
+    font-weight: 900;
+    position: relative;
+    float: left;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#subtitle{
+    color: #FFFFFF;
+    font-size: 35px;
+    font-weight: 500;
+    font-style: italic;
+    position: relative;
+    float: left;
+    top: 47%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+
+}
+
+#counter{
+    background-color: #A51C30;
+    color: #FFFFFF;
+    position:fixed;
+    font-size: 40px;
+    right: 10px;
+    bottom: 50%;
+}
+

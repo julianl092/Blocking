@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Group Number:</th>
+      <th scope="col">Member 1</th>
+      <th scope="col">Member 2</th>
+      <th scope="col">Member 3</th>
+      <th scope="col">Member 4</th>
+      <th scope="col">Member 5</th>
+      <th scope="col">Member 6</th>
+      <th scope="col">Member 7</th>
+      <th scope="col">Member 8</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- For every blocking group -->
+    {% for i in range(length) %}
+    <tr>
+      <!--Prints group number-->
+      <td>{{i + 1}}</td>
+      {% for j in range (8) %}
+      <!--For up to 8 group members, accesses the element in the dictionary (which is a list) corresponding to the key "i" and indexes into the list to return j'th name-->
+      <td>{{message["%d" %i][j]}}</td>
+      {% endfor %}
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

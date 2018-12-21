@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% from 'macros.html' import houseshields %}
+
+{% block main %}
+
+<!--http://getbootstrap.com/docs/4.1/components/jumbotron/-->
+<div class="jumbotron">
+  <div class="container">
+    <p class="display-4"> <strong>Thank You For Your Submission!</strong></p>
+      {{houseshields()}}
+      <p>The algorithm is in the process of generating blocking groups. You will now be permitted to view the
+      tentative arrangement as of right now. However, we request that you keep in mind that not everyone has filled out
+      the form yet, and thus this arrangement will almost certainly change. Please do not overreact.</p>
+      <p><a class="btn btn-danger crim-background" href="/results" role="button">Continue To Results &raquo;</a></p>
+</div>
+
+{% endblock %}

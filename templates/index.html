@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% from 'macros.html' import houseshields %}
+
+{% block main %}
+
+        <!--http://getbootstrap.com/docs/4.1/components/jumbotron/-->
+   	    <div class="jumbotron">
+   		    <div class="container">
+              <p class="display-4"> <strong>Welcome to The Blocking Algorithm!</strong></p>
+              {{houseshields()}}
+              <p>It is a commonly known fact that people are very, very complicated. Making friends is difficult enough -
+		      attempting to choose seven people to spend the next three years with while simultaneously trying not to offend anyone
+		      is simply ridiculous. This app takes that impossible process off your hand: everyone simply selects their most
+		      desired blockmates, and the algorithm does the rest. Choose wisely, and enjoy your stress-free blocking experience!</p>
+              <p><a class="btn btn-danger crim-background" href="/form" role="button">Submit Your Preferences &raquo;</a></p>
+        </div>
+
+{% endblock %}
+

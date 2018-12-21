@@ -1,0 +1,130 @@
+{% extends "layout.html" %}
+
+{% from 'macros.html' import roommateheader, selectmenu, roommaterating, houseshields %}
+
+{% block main %}
+
+    <!--http://getbootstrap.com/docs/4.1/components/jumbotron/-->
+	<div class="jumbotron">
+   		<div class="container">
+            <p class="display-4"> <strong>Instructions:</strong></p>
+            {{houseshields()}}
+            <p>You have a maximum of <strong>100 total rating points</strong> to allocate between
+		    <strong>up to 7</strong> potential blockmates, depending on how badly you want to be with them.
+		    You could give your best friend all 100 points, or give 14 points each to your squad of 7. The amount of points
+		    you give a blockmate will be the weighting of your pairing in the algorithm - in other words, the more points
+		    you allocate a friend, the more likely it will be that the algorithm will place you together.
+		    Spend wisely!</p>
+    </div>
+    <!-- http://getbootstrap.com/docs/4.1/components/forms/ -->
+    <form id = "form" class = "needs-validation halfwidth" novalidate action="/form" method="post">
+        <h6><label for="username">User Name:</label></h6>
+        <select id = "username" name = "username" class="custom-select mb-3" required>
+            {{selectmenu()}}
+		</select>
+		<div class="invalid-feedback">
+            You must select your name.
+        </div>
+        <h6><label for="name1" id = "label1">Blockmate #1:</label></h6>
+	    <select id = "name1" name = "name1" class="custom-select mb-3" required>
+        {{selectmenu()}}
+        <div class="form-group">
+        	<input autocomplete="off" autofocus class="form-control" name="rating1" id = "rating1" placeholder="Rating:" type="text" required>
+    	</div>
+        {{roommateheader(2)}}
+        {{selectmenu()}}
+        {{roommaterating(2)}}
+        {{roommateheader(3)}}
+        {{selectmenu()}}
+        {{roommaterating(3)}}
+        {{roommateheader(4)}}
+        {{selectmenu()}}
+        {{roommaterating(4)}}
+        {{roommateheader(5)}}
+        {{selectmenu()}}
+        {{roommaterating(5)}}
+        {{roommateheader(6)}}
+        {{selectmenu()}}
+        {{roommaterating(6)}}
+        {{roommateheader(7)}}
+        {{selectmenu()}}
+        {{roommaterating(7)}}
+        <button class="btn btn-outline-danger" type="submit">Submit</button>
+
+    </form>
+
+    <div class = "rounded" id = "counter">
+    </div>
+
+    <script>
+        var sum = 0;
+
+        //For the 7 rating elements in the form, every time a value is input, uses JQuery to get the value of all 7 elements.
+        //Sums the 7, and subtracts total from 100 to return the remaining number of points available to the user. Then, sets
+        //the text of the HTML element with id "counter" to that remaining number.
+
+        var rating1 = document.getElementById("rating1");
+        rating1.oninput = function(event) {
+            sum = 100 - $("#rating1").val() - $("#rating2").val() - $("#rating3").val() - $("#rating4").val() - $("#rating5").val() - $("#rating6").val() - $("#rating7").val();
+            $('#counter').text(`Points Remaining: ${sum}`);
+        };
+
+        var rating2 = document.getElementById("rating2");
+        rating2.oninput = function(event) {
+            sum = 100 - $("#rating1").val() - $("#rating2").val() - $("#rating3").val() - $("#rating4").val() - $("#rating5").val() - $("#rating6").val() - $("#rating7").val();
+            $('#counter').text(`Points Remaining: ${sum}`);
+        };
+
+        var rating3 = document.getElementById("rating3");
+        rating3.oninput = function(event) {
+            sum = 100 - $("#rating1").val() - $("#rating2").val() - $("#rating3").val() - $("#rating4").val() - $("#rating5").val() - $("#rating6").val() - $("#rating7").val();
+            $('#counter').text(`Points Remaining: ${sum}`);
+        };
+
+        var rating4 = document.getElementById("rating4");
+        rating4.oninput = function(event) {
+            sum = 100 - $("#rating1").val() - $("#rating2").val() - $("#rating3").val() - $("#rating4").val() - $("#rating5").val() - $("#rating6").val() - $("#rating7").val();
+            $('#counter').text(`Points Remaining: ${sum}`);
+        };
+
+        var rating5 = document.getElementById("rating5");
+        rating5.oninput = function(event) {
+            sum = 100 - $("#rating1").val() - $("#rating2").val() - $("#rating3").val() - $("#rating4").val() - $("#rating5").val() - $("#rating6").val() - $("#rating7").val();
+            $('#counter').text(`Points Remaining: ${sum}`);
+        };
+
+        var rating6 = document.getElementById("rating6");
+        rating6.oninput = function(event) {
+            sum = 100 - $("#rating1").val() - $("#rating2").val() - $("#rating3").val() - $("#rating4").val() - $("#rating5").val() - $("#rating6").val() - $("#rating7").val();
+            $('#counter').text(`Points Remaining: ${sum}`);
+        };
+
+        var rating7 = document.getElementById("rating7");
+        rating7.oninput = function(event) {
+            sum = 100 - $("#rating1").val() - $("#rating2").val() - $("#rating3").val() - $("#rating4").val() - $("#rating5").val() - $("#rating6").val() - $("#rating7").val();
+            $('#counter').text(`Points Remaining: ${sum}`);
+        };
+
+
+        //Prevents submission of the form if the user has used more than 100 rating points, has not input username, or has not input at least one blockmate, with alert box.
+        let input = document.querySelector("form");
+        input.onsubmit = function(event){
+            event.preventDefault();
+            if (document.getElementById("username").value == "") {
+                alert("You must select your user name!");
+            }
+            else if (document.getElementById("name1").value == "") {
+                alert("You must select at least one blockmate!")
+            }
+            else if (sum < 0) {
+                alert("You cannot use more than 100 points!");
+            }
+            else
+            {
+                input.submit();
+            }
+        };
+
+
+    </script>
+{% endblock %}
