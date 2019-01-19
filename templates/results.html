@@ -18,13 +18,13 @@
   </thead>
   <tbody>
     <!-- For every blocking group -->
-    {% for i in range(length) %}
+    {% for i in range(2) %}
     <tr>
       <!--Prints group number-->
       <td>{{i + 1}}</td>
       {% for j in range (8) %}
       <!--For up to 8 group members, accesses the element in the dictionary (which is a list) corresponding to the key "i" and indexes into the list to return j'th name-->
-      <td>{{message["%d" %i][j]}}</td>
+      <td>{{result[i][j}}</td>
       {% endfor %}
     </tr>
     {% endfor %}

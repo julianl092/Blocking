@@ -80,37 +80,4 @@ def get_submitted():
 def get_results():
     #Each time the results page is loaded, runs the main() function of the algorithm, which returns a list of two elements.
     result = main()
-    #Takes first element - dict of all the fully matched groups of 8 - and sets equal to groups.
-    groups = result[0]
-    #Second element - a list with at most 7 ID numbers unmatched by the algorithm - is called "others"
-    others = result[1]
-    #Initializes empty dict for message to Jinja template
-    message = {}
-    #Initializes counter to keep track of group number and key value in message dictionary
-    i = 0
-
-    #A group of 8 contains two tuples, each of which contains two pairs of ID numbers.
-    for group in groups:
-        #Initializes a list where all the ID numbers in that group will be extracted and stored
-        message[f"{i}"] = []
-        for quartet in group:
-            for pair in quartet:
-                #Replaces each ID number in the pair with the corresponding name from the "users" table.
-                name1 = db.execute("SELECT * from users WHERE id = :id", id = pair[0])[0]
-                message[f"{i}"].append(name1["Name"])
-                name2 = db.execute("SELECT * from users WHERE id = :id", id = pair[1])[0]
-                message[f"{i}"].append(name2["Name"])
-        i+= 1
-
-    #Initializes list to store the names of the people unmatched by the algorithm
-    newothers = []
-    for person in others:
-        #Takes ID number and adds corresponding name from "users" table to new list
-        newperson = db.execute("SELECT * from users WHERE id = :id", id = person)[0]
-        newothers.append(newperson["Name"])
-
-    #Appends others to the end of the dict
-    message[f"{i}"] = newothers
-    length = len(message)
-
-    return render_template("/results.html", message = message, length = length)
+    return render_template("/results.html", result = result)
