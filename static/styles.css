@@ -1,10 +1,12 @@
 body {
     width: 100%;
+    height: 100%;
     margin: 0%;
 }
 
 html {
     width: 100%;
+    height: 100%;
     overflow-x: hidden;
 
 }
@@ -23,7 +25,8 @@ label {
     font-weight: 700;
 }
 
-.container-fluid {
+
+.image .container-fluid {
   padding: 0 !important;
 }
 
@@ -63,7 +66,7 @@ label {
     position: relative;
 }
 
-.header {
+.mb-3 {
     text-align: center;
     font-family: 'Proza Libre', sans-serif;
 }
@@ -88,13 +91,26 @@ label {
 
 #title {
     color: #FFFFFF;
-    font-size: 90px;
     font-weight: 900;
-    position: relative;
-    float: left;
-    top: 35%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+}
+
+
+@media (min-width: 800px) {
+    #title {
+        font-size: 90px;
+    }
+    #subtitle {
+        font-size: 35px;
+    }
+}
+
+@media (max-width: 800px) {
+    #title {
+        font-size: 60px;
+    }
+    #subtitle {
+        font-size: 25px;
+    }
 }
 
 #subtitle{
@@ -102,12 +118,6 @@ label {
     font-size: 35px;
     font-weight: 500;
     font-style: italic;
-    position: relative;
-    float: left;
-    top: 47%;
-    left: 22%;
-    transform: translate(-50%, -50%);
-
 }
 
 #counter{
@@ -119,3 +129,9 @@ label {
     bottom: 50%;
 }
 
+#parent {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

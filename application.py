@@ -2,7 +2,7 @@ import cs50
 import csv
 from cs50 import SQL
 from flask import Flask, jsonify, redirect, render_template, request
-from algorithm import *
+from brutealgorithm import *
 
 # Configure application
 app = Flask(__name__)
